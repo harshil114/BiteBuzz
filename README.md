@@ -4,7 +4,8 @@ This project is a web application built using React and Parcel bundler, designed
 
 ## Features
 
-Clicking the "Top Rated Restaurants" button filters and displays restaurants with an average rating greater than 4.5.
+- Clicking the "Top Rated Restaurants" button filters and displays restaurants with an average rating greater than 4.5.
+- Developed a search functionality to enable users to find specific restaurants by name.
 
 ## Technologies Used
 
