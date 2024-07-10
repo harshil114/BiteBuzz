@@ -4,7 +4,6 @@ import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState(resList);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant , setFilteredRestaurant] = useState(resList);
  
@@ -13,7 +12,7 @@ const Body = () => {
      setFilteredRestaurant(filteredList);
   };
 
-  return listOfRestaurant.length === 0 ? (
+  return resList.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -29,7 +28,7 @@ const Body = () => {
           />
           <button
             onClick={() => {
-              const filteredRestaurant = listOfRestaurant.filter((res) =>
+              const filteredRestaurant = resList.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestaurant(filteredRestaurant);
