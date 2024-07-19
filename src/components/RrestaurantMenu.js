@@ -1,27 +1,19 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resID } = useParams();
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resID);
-    const json = await data.json();
-    setResInfo(json);
-  };
+  const resInfo = useRestaurantMenu(resID);
 
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data.cards[2]?.card?.card?.info;
 
-  const data = resInfo?.data.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-    console.log(resInfo);
+  const data =
+    resInfo?.data.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+      ?.card;
 
   return (
     <div className="menu">
@@ -37,7 +29,6 @@ const RestaurantMenu = () => {
             {item.card?.info.price / 100 || item.card?.info.defaultPrice / 100}
           </li>
         ))}
-        {/* <li>{itemCards[0].card.info.name}</li> */}
       </ul>
     </div>
   );
