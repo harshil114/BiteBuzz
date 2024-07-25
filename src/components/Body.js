@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, setFilteredRestaurant] = useState(resList);
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   const handleFilter = () => {
     const filteredList = resList.filter((res) => res.info.avgRating > 4.5);
@@ -20,7 +21,7 @@ const Body = () => {
       <div className="filter flex mb-8">
         <div className="search">
           <input
-          placeholder="Search Restaurants and food"
+            placeholder="Search Restaurants and food"
             type="text"
             className="search-box border border-solid border-black h-8 w-56 font-medium"
             value={searchText}
@@ -54,7 +55,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
