@@ -21,7 +21,7 @@ const ItemList = ({ items }) => {
                 ₹
                 {item.card.info.price
                   ? item.card.info.price / 100
-                  : item.card.info.defaultPrice}
+                  : item.card.info.defaultPrice / 100}
               </span>
             </div>
             <p
