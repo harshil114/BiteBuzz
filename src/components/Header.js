@@ -28,7 +28,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="mr-7 text-lg font-medium">
-            Cart ({cartItems.length})
+            <Link to="/cart">Cart ({cartItems.length})</Link>
           </li>
           {/* <button
             className="login"

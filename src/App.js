@@ -10,6 +10,7 @@ import RestaurantMenu from "./components/RrestaurantMenu";
 import useOnlineStatus from "./utils/useOnlineStatus";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   const onlineStatus = useOnlineStatus();
@@ -51,6 +52,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resID",
         element: <RestaurantMenu />,
       },
+      {
+        path:"/cart",
+        element:<Cart />
+      }
     ],
     errorElement: <Error />,
   },
