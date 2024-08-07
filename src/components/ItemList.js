@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
 import { MEDIA_ASSETS_URL } from "../utils/constants";
+import {addItem} from "../utils/cartSlice"
 
 const ItemList = ({ items }) => {
-  //   console.log(items);
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+
+  }
   return (
     <div>
       {items.map((item) => (
@@ -33,7 +40,10 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-2/12 p-4">
             <div className="absolute">
-              <button className="bg-white text-green-500 text-sm font-bold px-4 py-1 rounded-lg mx-3 bottom-6">
+              <button
+                className="bg-white text-green-500 text-sm font-bold px-4 py-1 rounded-lg mx-3 bottom-6"
+                onClick={() => handleAddItem(item)}
+              >
                 ADD
               </button>
             </div>
