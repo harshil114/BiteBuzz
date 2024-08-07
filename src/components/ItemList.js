@@ -33,9 +33,9 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-2/12 p-4">
             <div className="absolute">
-              {/* <button className="bg-white text-green-500 text-sm font-bold px-4 py-1 rounded-lg mx-3 bottom-6">
+              <button className="bg-white text-green-500 text-sm font-bold px-4 py-1 rounded-lg mx-3 bottom-6">
                 ADD
-              </button> */}
+              </button>
             </div>
             <img
               src={MEDIA_ASSETS_URL + item.card.info.imageId}
