@@ -1,11 +1,9 @@
 const Contact = () => {
-    return (
-      <div>
-        <h1>
-          contact us
-        </h1>
-      </div>
-    );
+  return (
+    <div className="aboutus m-8 text-center font-medium text-3xl">
+      Comming Soon...
+    </div>
+  );
   };
   export default Contact;
   
