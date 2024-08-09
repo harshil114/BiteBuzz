@@ -18,12 +18,12 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body m-8">
-      <div className="filter flex mb-8">
+      <div className="filter flex mb-8 justify-center">
         <div className="search">
           <input
             placeholder="Search Restaurants and food"
             type="text"
-            className="search-box border border-solid border-black h-8 w-56 font-medium"
+            className="search-box border border-solid border-black h-9 w-56 font-medium"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
