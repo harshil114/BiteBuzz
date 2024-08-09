@@ -12,22 +12,22 @@ const Header = () => {
 
   return (
     <div className="header flex justify-between items-center shadow-xl p-7">
-      <div className="logo-container">
-        <img className="logo h-9 w-56 object-fill" src={logo} />
+      <div className="logo-container cursor-pointer">
+        <Link to="/"><img className="logo h-9 w-56 object-fill" src={logo} /></Link>
       </div>
 
       <div className="nav-items mr-9">
         <ul className="flex">
-          <li className="mr-7 text-lg font-medium">
+          <li className="mr-7 text-lg font-medium hover:underline">
             <Link to="/">Home</Link>
           </li>
-          <li className="mr-7 text-lg font-medium">
+          <li className="mr-7 text-lg font-medium hover:underline">
             <Link to="/about">About Us</Link>
           </li>
-          <li className="mr-7 text-lg font-medium">
+          <li className="mr-7 text-lg font-medium hover:underline">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="mr-7 text-lg font-medium">
+          <li className="mr-7 text-lg font-medium hover:underline">
             <Link to="/cart">Cart ({cartItems.length})</Link>
           </li>
           {/* <button
